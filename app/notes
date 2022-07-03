@@ -1,0 +1,34 @@
+for i in 16 32 48 64 86 128 192 256; do
+  convert "favicon.ico" -thumbnail ${i}x${i} -alpha on -background none -flatten favicon-${i}x${i}.png
+done
+
+https://www.favicon.cc/?action=icon&file_id=979886
+
+https://github.com/vycoder/vue-markdown-blog/tree/master/src
+
+https://blog.openreplay.com/how-to-parse-and-render-markdown-in-vuejs
+
+https://github.com/miaolz123/vue-markdown
+
+https://github.com/remarkjs/remark
+https://github.com/markedjs/marked
+
+npm install --save \
+    vue-aos \
+    marked@2.0 \
+    particles.js \
+    vue-cookie-law \
+    vue-i18n@8.17.3 \
+    vuetify \
+    vuex@3.6.2
+
+
+npm install --save vue-analytics
+
+    "vue-analytics": "^5.22.1",
+
+npm install --save vue-typer
+npm install --saver howler
+
+./node_modules/.bin/vue-cli-service serve --host d01.g1
+

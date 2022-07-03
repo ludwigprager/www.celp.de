@@ -1,0 +1,77 @@
+{
+  "links": {
+    "home": "Home",
+    "products": "Services",
+    "references": "References",
+    "contact": "Contact Us",
+    "gdpr": "GDPR",
+    "imprint": "Imprint"
+  },
+
+  "sections": {
+    "1": {
+      "text": "Ludwig Prager"
+    },
+    "2": {
+      "text": "cloud architect"
+    },
+    "3": {
+      "text": "software developer"
+    },
+    "4": {
+      "text": "DevOps engineer"
+    },
+    "5": {
+      "text": "CKAD certified"
+    }
+  },
+
+  "projects": {
+    "p1": {
+      "title": "Cloud",
+      "subtitle": "Design, development and operation of cloud solutions on AWS, Azure, GCP and on-premise"
+    },
+    "p2": {
+      "title": "DevOps",
+      "subtitle": "Build and run k8s products"
+    },
+    "p3": {
+      "title": "SW Development",
+      "subtitle": "Development of applications in NodeJS, GoLang, Python, C++, Java"
+    }
+  },
+
+  "products": {
+    "title": "Services",
+    "subtitle": "Platforms, Services and Solutions that are developed and managed by me"
+  },
+
+  "references": {
+    "title": "References",
+    "subtitle": "Selection of companies I worked for"
+  },
+
+  "footer": {
+    "copyrights": "Ludwig Prager - All rights reserved.",
+    "description": "Software Development and Information Technology Company that provides software solutions, products and platforms to e-commerce, and other e-business industries.",
+    "created-by": "this website was designed, coded and developed by Elektra Prager.",
+    "links": "Navigation:",
+      
+    "contact": {
+      "subheader": "contact us via:",
+      "email": "Email Address",
+      "linkedin": "LinkedIn",
+      "website": "Web Site",
+      "github": "Sources on Github"
+    }
+  },
+
+  "gdpr": {
+    "title": "Privacy Settings",
+    "subtitle": "This site uses third-party cookies to enhance your user experience.",
+    "link-message": "Follow this link for more information: ",
+    "accept": "Accept",
+    "reject": "Reject"
+  }
+
+}

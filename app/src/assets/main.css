@@ -1,0 +1,68 @@
+
+
+/*
+src/assets/main.css
+https://blog.logrocket.com/best-practices-for-loading-fonts-in-vue/
+https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face
+*/
+
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 100;
+  font-style: normal;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Roboto"), url("./fonts/Roboto/roboto-v30-latin-100.woff") format("woff2"), url("./fonts/Roboto/roboto-v30-latin-100.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-style: normal;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Roboto"), url("./fonts/Roboto/roboto-v30-latin-300.woff") format("woff2"), url("./fonts/Roboto/roboto-v30-latin-300.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-style: normal;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Roboto"), url("./fonts/Roboto/roboto-v30-latin-500.woff") format("woff2"), url("./fonts/Roboto/roboto-v30-latin-500.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-style: normal;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Roboto"), url("./fonts/Roboto/roboto-v30-latin-700.woff") format("woff2"), url("./fonts/Roboto/roboto-v30-latin-700.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 900;
+  font-style: normal;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Roboto"), url("./fonts/Roboto/roboto-v30-latin-900.woff") format("woff2"), url("./fonts/Roboto/roboto-v30-latin-900.woff") format("woff");
+}
+
+/* body, h1, h2, h3, h4, h5, h6 {
+  font-family: Arial;
+*/
+* {
+  font-family: Roboto;
+}
+
+
+/* nur fuer vue-typer
+das ging irgendwie nicht anders
+*/
+.vue-typer .custom.char {
+  color: #fafafa;
+}

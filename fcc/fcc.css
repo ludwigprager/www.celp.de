@@ -1,0 +1,295 @@
+/*
+ h1,h2,h3 {
+ color: green;
+ }
+ https://stackoverflow.com/questions/36957904/media-queries-in-sass
+ $media_queries : (
+ 'mobile'    : \"only screen and (max-width: 667px)\",
+ 'tablet'    : \"only screen and (min-width: 668px) and (max-width: $size__site_content_width)\",
+ 'desktop'   : \"only screen and (min-width: ($size__site_content_width + 1))\",
+ 'retina2'   : \"only screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)\",
+ 'retina3'   : \"only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 288dpi)\",
+ 'landscape' : \"screen and (orientation:landscape) \",    
+ 'portrait'  : \"screen and (orientation:portrait) \"
+ );
+ */
+
+/*
+a, article, body, code, div, figcaption, figure, h3, html, img, li, p, pre, s, section, strong, ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+}
+html {
+  box-sizing: border-box;
+  font-family: Lato, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+*, :after, :before {
+  box-sizing: inherit;
+}
+a {
+  background-color: transparent;
+}
+a:active, a:hover {
+  outline: 0;
+}
+strong {
+  font-weight: 700;
+}
+img {
+  border: 0;
+}
+code, pre {
+  font-family: "Roboto Mono", monospace;
+  font-display: swap;
+  font-size: 1em;
+}
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  overflow-x: hidden;
+  color: #0a0a23;
+  font-family: Lato, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.6em;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  text-rendering: optimizeLegibility;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+  font-feature-settings: "liga1" on;
+}
+::selection {
+  text-shadow: none;
+  background: #002ead;
+  color: #fff;
+}
+img {
+  vertical-align: middle;
+}
+p, ul {
+  margin: 0 0 1.5em;
+}
+ul {
+  padding-left: 1.3em;
+  padding-right: 1.5em;
+}
+ul ul {
+  margin: 0.5em 0 1em;
+}
+ul {
+  list-style: disc;
+}
+ul {
+  max-width: 100%;
+}
+li {
+  margin: 0.5em 0;
+  padding-left: 0.3em;
+  line-height: 1.6em;
+}
+a {
+  color: #002ead;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+ h3 {
+  margin-top: 0;
+  line-height: 1.15;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+  color: green;
+}
+*/
+
+div, section, p {
+  font-size: 1.6rem;
+  /*
+  font-size: 1.2rem;
+  font-size: 62.5%;
+  */
+}
+
+
+@media (max-width: 500px) {
+  .markdown h3 {
+    font-size: 2.2rem;
+  }
+  h3 {
+    font-size: 1.7rem;
+  }
+  .markdown:after, .markdown:before {
+    display: none;
+  }
+  .markdown {
+    padding: 0;
+  }
+}
+@media (max-width: 800px) {
+  .markdown {
+    font-size: 1.9rem;
+  }
+}
+@media (min-width: 501px) and (max-width: 999px) {
+  .markdown {
+    padding: 5vw 7vw 0;
+  }
+}
+@media (max-width: 1040px) {
+  .markdown img {
+    width: 100%;
+  }
+}
+h3 {
+  margin: 1.5em 0 0.5em;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+body {
+  background: #fff;
+}
+.img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+}
+.markdown {
+  position: relative;
+  margin: 0 auto;
+  padding: 70px 150px 0;
+  min-height: 230px;
+  font-family: Lato, sans-serif;
+  font-display: swap;
+  font-size: 2.2rem;
+  line-height: 1.6em;
+  background: #fff;
+}
+ .markdown code, .markdown h3, .markdown p, .markdown pre, .markdown ul {
+  min-width: 100%;
+  font-size: 0.8em;
+
+}
+.markdown h3:target {
+  scroll-margin-top: calc($header-height + 0.5em);
+}
+.markdown li {
+  word-break: break-word;
+}
+.markdown li p {
+  margin: 0;
+}
+.markdown a {
+  color: #0a0a23;
+  word-break: break-word;
+  text-decoration: underline;
+}
+.markdown a:hover {
+  text-decoration: none;
+}
+ .markdown strong {
+  color: #1b1b32;
+}
+.markdown li:first-child {
+  margin-top: 0;
+}
+.markdown img {
+  display: block;
+  margin: 1.5em auto;
+  max-width: 1040px;
+  height: auto;
+}
+.markdown code {
+  padding: 0 5px 2px;
+  font-size: 0.8em;
+  line-height: 1em;
+  font-weight: 400 !important;
+  background: #d0d0d5;
+}
+.markdown p code {
+  word-break: break-all;
+}
+.markdown pre {
+  overflow-x: auto;
+  margin: 1.5em 0 3em;
+  padding: 20px;
+  max-width: 100%;
+  color: #1b1b32;
+  font-size: 1.4rem;
+  line-height: 1.5em;
+  background: #eeeef0;
+}
+.markdown pre code {
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  background: 0 0;
+}
+.markdown pre code :not(span) {
+  color: inherit;
+}
+ .markdown h3 {
+  color: #1b1b32;
+  font-family: Lato, sans-serif;
+  font-display: swap;
+}
+.markdown h3 {
+  margin: 0.5em 0 0.2em;
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+.markdown .kg-image {
+  max-width: 100%;
+}
+.markdown .kg-width-wide .kg-image {
+  max-width: 1040px;
+}
+.markdown figure {
+  margin: 1.5em 0 3em;
+}
+.markdown figure img {
+  margin: 0 auto;
+}
+.markdown figcaption {
+  margin: 1em auto 0;
+  font-size: 80%;
+  line-height: 1.5em;
+  text-align: center;
+  max-width: 1040px;
+}
+.kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
+  margin: -2.25em 0 3em;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: auto;
+  }
+}

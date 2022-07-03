@@ -1,0 +1,77 @@
+{
+  "links": {
+    "home": "Start",
+    "products": "Dienste",
+    "references": "Referenzen",
+    "contact": "Kontakt",
+    "gdpr": "Datenschutzerklärung",
+    "imprint": "Impressum"
+  },
+
+  "sections": {
+    "1": {
+      "text": "Ludwig Prager"
+    },
+    "2": {
+      "text": "Cloud Architekt"
+    },
+    "3": {
+      "text": "Softwareentwickler"
+    },
+    "4": {
+      "text": "DevOps Engineer"
+    },
+    "5": {
+      "text": "CKAD zertifiziert"
+    }
+  },
+
+  "projects": {
+    "p1": {
+      "title": "Cloud",
+      "subtitle": "Entwurf, Entwicklung und Betrieb von Cloudlösungen mit AWS, Azure, GCP und on-premise"
+    },
+    "p2": {
+      "title": "DevOps",
+      "subtitle": "Entwurf und Betrieb von Lösungen auf Basis von Kubernetes."
+    },
+    "p3": {
+      "title": "Softwareentwicklung",
+      "subtitle": "Softwareentwicklung mit NodeJS, GoLang, Python, C++, Java"
+    }
+  },
+
+  "products": {
+    "title": "Dienste und Lösungen",
+    "subtitle": "Dienste, Plattformen und Lösungen mit besonderer Expertise"
+  },
+
+  "references": {
+    "title": "Referenzen",
+    "subtitle": "Eine Auswahl an Kunden und Projekten"
+  },
+
+  "footer": {
+      "copyrights": "Ludwig Prager - Alle Rechte vorbehalten.",
+      "description": "Softwareentwicklungs- und Beratungsgesellschaft für Produkte und Plattformen in den Gebieten E-Commerce und anderen E-business Industrien.",
+      "created-by": "Diese Seite wurde entworfen und entwickelt von Elektra Prager.",
+      "links": "Navigation:",
+      
+      "contact": {
+        "subheader": "Sie erreichen uns über:",
+        "email": "Emailadresse",
+        "linkedin": "LinkedIn",
+        "website": "Netzseite",
+        "github": "Quellcode auf Github"
+      }
+  },
+
+  "gdpr": {
+    "title": "Privatsphäre-Einstellungen",
+    "subtitle": "Diese Seite nutzt Website-Tracking-Technologien.",
+    "link-message": "Folgen Sie diesem Verweis für weitere Informationen: ",
+    "accept": "Akzeptieren",
+    "reject": "Ablehnen"
+  }
+
+}
