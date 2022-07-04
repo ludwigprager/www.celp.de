@@ -4,8 +4,10 @@ import HomeView from '../views/HomeView.vue'
 //import TestView from '../views/TestView.vue'
 import gdpr from '../views/gdpr.vue'
 import imprint from '../views/imprint.vue'
+import blog from '../views/blog.vue'
 import p1 from '../views/p1.vue'
-import TerraformStatefile from '../views/terraform-statefile.vue'
+import terraformstatefile from '../views/terraform-statefile.vue'
+import rcloneionos from '../views/rclone-ionos.vue'
 
 Vue.use(VueRouter)
 
@@ -16,6 +18,11 @@ const routes = [
     component: HomeView
   },
   {
+    path: '/blog',
+    name: 'blog',
+    component: blog
+  },
+  {
     path: '/p1',
     name: 'p1',
     component: p1
@@ -23,7 +30,12 @@ const routes = [
   {
     path: '/terraform-statefile',
     name: 'terraform-statefile',
-    component: TerraformStatefile
+    component: terraformstatefile
+  },
+  {
+    path: '/rclone-ionos',
+    name: 'rclone-ionos',
+    component: rcloneionos
   },
   {
     path: '/gdpr',
