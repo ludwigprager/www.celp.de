@@ -70,6 +70,13 @@
       </v-container>
     </div>
 
+    <div class="footer-watermark flex-column">
+      <div>Find the code for this website on <a href="https://github.com/ludwigprager/www.celp.de">github</a></div>
+<!--
+        https://github.com/ludwigprager/www.celp.de
+-->
+    </div>
+
     <!--
     <Consent/>
     -->
@@ -151,5 +158,32 @@ export default {
     line-height: 1.9rem;
   }
 }
+
+.v-application a { color: #aaaaaa; }
+
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/*
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+*/
 
 </style>
