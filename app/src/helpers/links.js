@@ -4,4 +4,5 @@ export default [
     {name: 'references', ref: "#referencesSection"},
     {name: 'gdpr', ref: "gdpr"},
     {name: 'imprint', ref: "imprint"},
+    {name: 'blog', ref: "blog"},
 ]
