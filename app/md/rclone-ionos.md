@@ -1,5 +1,9 @@
 # Using the Rclone Command with the Ionos Cloud
-It may sound simple but it took me some time to find a working
+
+Here you find a working rclone.conf for S3 in the ionos (former: profitbricks) cloud.
+
+What sounds like a fairly easy task turned out to be a lengthy search and testing for the right settings
+in a
 `rclone.conf` for the ionos cloud.
 
 The howto page https://www.ionos.de/digitalguide/server/knowhow/datenmigration-mit-rclone/ didn't
@@ -17,7 +21,8 @@ endpoint = https://s3-de-central.profitbricks.com:443
 acl = private
 ```
 
-The script I where it is used looks as follows:
+In my office the config is used in the following script
+to create a local backup of the bucket:
 ```
 #!/bin/bash
 
