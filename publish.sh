@@ -10,4 +10,5 @@ cd ${BASEDIR}
 
 rsync  -av --delete app/dist/ root@ionos1.celp.de:/var/www/celp.de/
 rsync  -av --delete ./htaccess root@ionos1.celp.de:/var/www/celp.de/.htaccess
+rsync  -av --delete ./sitemap.xml ./robots.txt root@ionos1.celp.de:/var/www/celp.de/
 
