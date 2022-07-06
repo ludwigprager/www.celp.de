@@ -9,6 +9,10 @@ cd ${BASEDIR}
 ./develop.sh npm run build
 
 rsync  -av --delete app/dist/ root@ionos1.celp.de:/var/www/celp.de/
-rsync  -av --delete ./htaccess root@ionos1.celp.de:/var/www/celp.de/.htaccess
-rsync  -av --delete ./sitemap.xml ./robots.txt root@ionos1.celp.de:/var/www/celp.de/
+rsync  -av          ./htaccess root@ionos1.celp.de:/var/www/celp.de/.htaccess
+rsync  -av \
+  ./google3bc0c8c2e19c12ff.html \
+  ./sitemap.xml \
+  ./robots.txt \
+  root@ionos1.celp.de:/var/www/celp.de/
 
