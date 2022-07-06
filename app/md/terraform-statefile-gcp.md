@@ -179,7 +179,6 @@ terraform init \
 terraform destroy -auto-approve
 ```
 
-
 ## File Tree
 This is the file tree for the whole scenario.
 ```
@@ -197,9 +196,7 @@ lprager@d01:~/work/cyagame/IaC/gke-tf$ tree
 │   ├── network.tf
 │   ├── network-variables.tf
 │   ├── provider.tf
-│   ├── registry.tf
 └── set-env.sh
-
 ```
 
 
