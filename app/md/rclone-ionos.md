@@ -2,9 +2,8 @@
 
 Here you find a working rclone.conf for S3 in the ionos (former: profitbricks) cloud.
 
-What sounds like a fairly easy task turned out to be a lengthy search and testing for the right settings
-in a
-`rclone.conf` for the ionos cloud.
+What sounded like an easy task turned out to be a lengthy search: find the right settings
+in a `rclone.conf` for the ionos cloud.
 
 The howto page https://www.ionos.de/digitalguide/server/knowhow/datenmigration-mit-rclone/ didn't
 not help much.
@@ -22,7 +21,7 @@ acl = private
 ```
 
 In my office the config is used in the following script
-to create a local backup of the bucket:
+backup the bucket to a directory `cya-fileshare`.
 ```
 #!/bin/bash
 

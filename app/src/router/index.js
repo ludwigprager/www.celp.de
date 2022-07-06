@@ -7,6 +7,9 @@ import imprint from '../views/imprint.vue'
 import blog from '../views/blog.vue'
 import p1 from '../views/p1.vue'
 import terraformstatefile from '../views/terraform-statefile.vue'
+import terraformstatefilegcp from '../views/terraform-statefile-gcp.vue'
+import terraformstatefileaws from '../views/terraform-statefile-aws.vue'
+import terraformstatefileazure from '../views/terraform-statefile-azure.vue'
 import rcloneionos from '../views/rclone-ionos.vue'
 
 Vue.use(VueRouter)
@@ -31,6 +34,21 @@ const routes = [
     path: '/terraform-statefile',
     name: 'terraform-statefile',
     component: terraformstatefile
+  },
+  {
+    path: '/terraform-statefile-gcp',
+    name: 'terraform-statefile-gcp',
+    component: terraformstatefilegcp
+  },
+  {
+    path: '/terraform-statefile-aws',
+    name: 'terraform-statefile-aws',
+    component: terraformstatefileaws
+  },
+  {
+    path: '/terraform-statefile-azure',
+    name: 'terraform-statefile-azure',
+    component: terraformstatefileazure
   },
   {
     path: '/rclone-ionos',

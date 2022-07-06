@@ -1,76 +1,27 @@
-# The Terraform Statefile on GCP
+# The Terraform Statefile when deploying Infrastructure for Public Clouds
 
-## File Tree
+It is best practise to use terraform in combination with a statefile.
+The statefile should be in a remote place and prevent concurrent invocations.
+Here, we assume an S3 bucket to be used as container.
+
+## How to create the remote statefile
+Some suggest to create the bucket with terraform, too. But this is a hen-and-egg problem.
+A better way is to use cloud-cli commands to test if the bucket already exists and create it if it doesn't.
+This approach works in all of the public clouds an we'll see in detail how for AWS, Azure and GCP.
+
+When running `terraform apply` one of these three situations applies:
+1. terraform was never run before. There is no remote statefile and of course no resources.
+2. terraform has run before but not in the environment where you are now. So there is a statefile in a remote place but not locally, in your directory. Hence, some initialisation is necessary.
+3. terraform was run before in the same environment. The statefile exists remote and locally.
+
+Now, regardless of which case applies we just want to run a command like
 ```
-lprager@d01:~/work/cyagame/IaC/gke-tf$ tree
-.
-├── 10-apply.sh
-├── 20-tf-backend
-│   ├── 10-create.sh
-│   ├── 90-destroy.sh
-│   ├── functions.sh
-│   ├── notes.md
-│   ├── README.md
-│   └── set-env.sh
-├── 30-main
-│   ├── 10-apply.sh
-│   ├── 90-destroy.sh
-│   ├── apis.tf.disabled
-│   ├── backend.tf
-│   ├── gke.tf
-│   ├── gke-variables.tf
-│   ├── jumphost.tf
-│   ├── jumphost-variables.tf
-│   ├── network.tf
-│   ├── network-variables.tf
-│   ├── notes
-│   ├── outputs.tf
-│   ├── provider.tf
-│   ├── README.md
-│   ├── registry.tf
-│   ├── sa_cya_ci_id_rsa.pub
-│   └── service-account.tf
-├── 90-teardown.sh
-├── notes
-└── set-env.sh
-
+./deploy.sh <some credentials>
 ```
+and expect the result the be the same, i.e. the resources created according to the .tf files and the statefile to
+mirror the infrastructure.
 
-## 20-tf-backend/10-create.sh 
-```
-#!/usr/bin/env bash
-
-#set -x
-
-set -eu
-set -o pipefail
-
-
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd $DIR
-source ../../functions.sh
-source ../../set-env.sh
-source ../set-env.sh
-source ./set-env.sh
-source ./functions.sh
-
-export CLOUDSDK_CORE_PROJECT=${TF_VAR_project_id}
-
-#result=$(bucket-exists "${BUCKET_NAME}")
-if bucket-exists "${BUCKET_NAME}"  ; then 
-  echo bucket ${BUCKET_NAME} already exists
-else
-  echo creating bucket ${BUCKET_NAME}
-  gsutil mb gs://${BUCKET_NAME}
-fi
-```
-
-## The sample application: Sentiment Analysis
-
-```
-CONTAINER ID   IMAGE                  COMMAND        NAMES
-2974301ffa31   kindest/node:v1.23.1   "/usr/loca…"   kind-control-plane
-```
-
-We’ll run the microservice application used in my Kubernetes introductory article . It’s complex enough to showcase Istio’s features in practice. 
-
+# GCP
+[How to use the terraform statefile: GCP](/terraform-statefile-gcp)  
+[How to use the terraform statefile: AWS](/terraform-statefile-aws)  
+[How to use the terraform statefile: Azure](/terraform-statefile-azure)  
