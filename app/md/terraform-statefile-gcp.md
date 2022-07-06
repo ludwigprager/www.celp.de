@@ -5,15 +5,21 @@ This is the GCP part of
 [this post](/terraform-statefile)  
 
 
-## gke-tf/20-tf-backend/set-env.sh 
+## 20-tf-backend/set-env.sh 
 First, a file that holds settings and variables. In this case it it's just one.
 But your project will grow and this is a good place.
 ```
 #!/usr/bin/env bash
 
-# choose arbitrary but unique prefix (since it's used for the bucket name, too):
+# choose arbitrary but unique prefix
+# (since it's used for the bucket name, too):
+
 MY_PREFIX=gtb-20211221-lp
 export BUCKET_NAME="${MY_PREFIX}-bucket"
+export TF_VAR_network_name="celp-network-01"
+export TF_VAR_subnetwork_name="celp-subnetwork"
+export TF_VAR_project_id="celp-test-335521"
+
 ```
 
 ## 20-tf-backend/10-create.sh 
@@ -178,14 +184,10 @@ terraform init \
 
 terraform destroy -auto-approve
 ```
-
 ## File Tree
 This is the file tree for the whole scenario.
 ```
-lprager@d01:~/work/cyagame/IaC/gke-tf$ tree
-.
-├── 10-deploy.sh
-│   set-env.sh
+├── 10-apply.sh
 ├── 20-tf-backend
 │   ├── 10-create.sh
 │   └── set-env.sh
@@ -196,6 +198,7 @@ lprager@d01:~/work/cyagame/IaC/gke-tf$ tree
 │   ├── network.tf
 │   ├── network-variables.tf
 │   ├── provider.tf
+├── 90-teardown.sh
 └── set-env.sh
 ```
 
