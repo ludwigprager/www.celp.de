@@ -159,6 +159,27 @@ export GOOGLE_APPLICATION_CREDENTIALS=${KEY_FILE}
 ./30-main/10-apply.sh $*
 ```
 
+## 30-main/90-destroy.sh 
+This file will destroy the vpc. Try to run this script
+and then again the 30-main/10-apply.sh.
+```
+#!/usr/bin/env bash
+
+set -eu
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+
+source ../20-tf-backend/set-env.sh
+
+terraform init \
+  -input=false \
+  -backend-config="bucket=${BUCKET_NAME}"
+
+terraform destroy -auto-approve
+```
+
+
 ## File Tree
 This is the file tree for the whole scenario.
 ```
@@ -175,12 +196,8 @@ lprager@d01:~/work/cyagame/IaC/gke-tf$ tree
 │   ├── backend.tf
 │   ├── network.tf
 │   ├── network-variables.tf
-│   ├── outputs.tf
 │   ├── provider.tf
 │   ├── registry.tf
-│   ├── sa_cya_ci_id_rsa.pub
-│   └── service-account.tf
-├── 90-teardown.sh
 └── set-env.sh
 
 ```
