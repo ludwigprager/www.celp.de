@@ -99,12 +99,32 @@ a:hover {
   text-decoration: underline;
 }
 
- h3 {
+h1 {
+  margin-bottom: 1.0rem;
+}
+
+h2 {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  line-height: 0.60;
+
+    font-size: 1.5rem;
+
+  font-weight: 600;
+  text-rendering: optimizeLegibility;
+/*
+  color: blue;
+*/
+}
+
+h3 {
   margin-top: 0;
   line-height: 1.15;
   font-weight: 700;
   text-rendering: optimizeLegibility;
+/*
   color: green;
+*/
 }
 
 .markdown section, div,p {
