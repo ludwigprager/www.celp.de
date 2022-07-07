@@ -14,6 +14,23 @@
  );
  */
 
+body {
+  overflow-x: hidden;
+  color: #0a0a23;
+  font-family: Lato, sans-serif;
+  line-height: 1.6em;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  text-rendering: optimizeLegibility;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+  font-feature-settings: "liga1" on;
+}
+
+
 a, article, body, code, div, figcaption, figure, h3, html, img, li, p, pre, s, section, strong, ul {
   margin: 0;
   padding: 0;
@@ -36,9 +53,11 @@ a {
 a:active, a:hover {
   outline: 0;
 }
+
 strong {
   font-weight: 700;
 }
+
 img {
   border: 0;
 }
@@ -46,21 +65,7 @@ code, pre {
   font-family: "Roboto Mono", monospace;
   font-display: swap;
 }
-body {
-  overflow-x: hidden;
-  color: #0a0a23;
-  font-family: Lato, sans-serif;
-  line-height: 1.6em;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0;
-  text-rendering: optimizeLegibility;
-  background: #fff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -moz-font-feature-settings: "liga" on;
-  font-feature-settings: "liga1" on;
-}
+
 ::selection {
   text-shadow: none;
   background: #002ead;
@@ -127,7 +132,7 @@ h3 {
 */
 }
 
-.markdown section, div,p {
+#markdown section, div,p {
 
     font-size: 1.2rem;
   font-weight: 400;
@@ -136,38 +141,9 @@ h3 {
 
 }
 
-@media (max-width: 500px) {
-  .markdown h3 {
-  }
-  h3 {
-  }
-  .markdown:after, .markdown:before {
-    display: none;
-  }
-  .markdown {
-    padding: 0;
-  }
-}
-@media (max-width: 800px) {
-  .markdown {
-  }
-}
-@media (min-width: 501px) and (max-width: 999px) {
-  .markdown {
-    padding: 5vw 7vw 0;
-  }
-}
-@media (max-width: 1040px) {
-  .markdown img {
-    width: 100%;
-  }
-}
 h3 {
   margin: 1.5em 0 0.5em;
   font-weight: 500;
-}
-body {
-  background: #fff;
 }
 .img {
   display: block;
@@ -176,7 +152,7 @@ body {
   background-position: center center;
   background-size: cover;
 }
-.markdown {
+#markdown {
   position: relative;
   margin: 0 auto;
   padding: 70px 150px 0;
@@ -186,45 +162,51 @@ body {
   line-height: 1.6em;
   background: #fff;
 }
- .markdown h3, .markdown p, .markdown pre, .markdown ul {
+ #markdown h3, #markdown p, #markdown pre, #markdown ul {
   min-width: 100%;
 }
-.markdown li {
+#markdown li {
   word-break: break-word;
 }
-.markdown li p {
+#markdown li p {
   margin: 0;
 }
-.markdown a {
+#markdown a {
   color: #0a0a23;
   word-break: break-word;
   text-decoration: underline;
 }
-.markdown a:hover {
+#markdown a:hover {
   text-decoration: none;
 }
- .markdown strong {
+ #markdown strong {
   color: #1b1b32;
 }
-.markdown li:first-child {
+#markdown li:first-child {
   margin-top: 0;
 }
-.markdown img {
+#markdown img {
   display: block;
   margin: 1.5em auto;
   max-width: 1040px;
   height: auto;
 }
-.markdown code {
+#markdown code {
   padding: 0 5px 2px;
   line-height: 1em;
   font-weight: 400 !important;
   background: #d0d0d5;
 }
-.markdown p code {
+
+#markdown pre code {
   word-break: break-all;
 }
-.markdown pre {
+
+#markdown p code {
+  white-space: nowrap;
+}
+
+#markdown pre {
   overflow-x: auto;
   margin: 1.5em 0 3em;
   padding: 20px;
@@ -233,36 +215,36 @@ body {
   line-height: 1.5em;
   background: #eeeef0;
 }
-.markdown pre code {
+#markdown pre code {
   padding: 0;
   line-height: inherit;
   background: 0 0;
 }
-.markdown pre code :not(span) {
+#markdown pre code :not(span) {
   color: inherit;
 }
- .markdown h3 {
+ #markdown h3 {
   color: #1b1b32;
   font-family: Lato, sans-serif;
   font-display: swap;
 }
-.markdown h3 {
+#markdown h3 {
   margin: 0.5em 0 0.2em;
   font-weight: 700;
 }
-.markdown .kg-image {
+#markdown .kg-image {
   max-width: 100%;
 }
-.markdown .kg-width-wide .kg-image {
+#markdown .kg-width-wide .kg-image {
   max-width: 1040px;
 }
-.markdown figure {
+#markdown figure {
   margin: 1.5em 0 3em;
 }
-.markdown figure img {
+#markdown figure img {
   margin: 0 auto;
 }
-.markdown figcaption {
+#markdown figcaption {
   margin: 1em auto 0;
   line-height: 1.5em;
   text-align: center;
@@ -270,6 +252,33 @@ body {
 }
 .kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
   margin: -2.25em 0 3em;
+}
+
+@media (max-width: 500px) {
+  #markdown h3 {
+  }
+  h3 {
+  }
+  #markdown:after, #markdown:before {
+    display: none;
+  }
+  #markdown {
+    padding: 0;
+  }
+}
+@media (max-width: 800px) {
+  #markdown {
+  }
+}
+@media (min-width: 501px) and (max-width: 999px) {
+  #markdown {
+    padding: 5vw 7vw 0;
+  }
+}
+@media (max-width: 1040px) {
+  #markdown img {
+    width: 100%;
+  }
 }
 @keyframes fadein {
   from {

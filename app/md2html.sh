@@ -18,12 +18,12 @@ for post in ${POSTS}; do
   page=${TARGET_DIR}/${post}.html
 
   echo '<div id="markdown">' > $page
-  echo '  <section class="markdown">' >> $page
+# echo '  <section class="markdown">' >> $page
 
   #cat ./md/${post}.md | marked --mangle --gfm >> $page
   cat ./md/${post}.md | marked >> $page
 
-  echo '  </section>' >> $page
+# echo '  </section>' >> $page
   echo '</div>' >> $page
 
 done
