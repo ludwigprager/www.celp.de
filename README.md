@@ -15,6 +15,7 @@ Start the local dev. environment with
 ./develop.sh
 ```
 You need docker installed, nothing else.
+Besides creating a new image and mounting a directory in the git repo as volume it will not modify your running system.
 ## Deployment
 Publish the current version with
 ```
