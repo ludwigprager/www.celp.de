@@ -46,7 +46,6 @@ Now, regardless of which case applies we just want to run a command like
 and expect the result the be the same, i.e. the resources created according to the .tf files and the statefile to
 mirror the infrastructure.
 
-# GCP
-[How to use the terraform statefile: GCP](/terraform-statefile-gcp)  
-[How to use the terraform statefile: AWS](/terraform-statefile-aws)  
-[How to use the terraform statefile: Azure](/terraform-statefile-azure)  
+[Part 2: How to use the terraform statefile: GCP](/terraform-statefile-gcp)  
+[Part 3: How to use the terraform statefile: AWS](/terraform-statefile-aws)  
+[Part 4: How to use the terraform statefile: Azure](/terraform-statefile-azure)  
