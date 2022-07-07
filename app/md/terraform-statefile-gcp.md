@@ -1,5 +1,5 @@
 
-# How To Use The Terraform Statefile In The GCP Cloud.
+# The Terraform Statefile in Public Clouds: GCP
 
 This is the GCP part of 
 [this post](/terraform-statefile)  

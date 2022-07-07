@@ -1,25 +1,21 @@
-# The Terraform Statefile when deploying Infrastructure for Public Clouds
-
-    
+# The Terraform Statefile in Public Clouds
     
 ## TL;DR
-What I expect from a IaC project is a simple workflow similar to the following:  
 
 You have
 1. a git repo with your IaC code
 2. credentials that permit for using an account in GCP, Azure or AWS  
 
-With those two assets you run two steps:
+With those two assets perform two steps:
 
 ```
 git clone <some git URL>
 <the git repo name>/deploy.sh <some credentials>
 ```
 
-Nothing more.  
 This installs the infrastructure, builds and tests your app, promoting
-through stages and eventually deploys to 'prod'.
-
+through stages and eventually deploys to 'prod'.  
+Perform these two steps in your team and in the CI/CD, in parallel, over and over and expect it to work.
 
 
 ## Now in more detail
