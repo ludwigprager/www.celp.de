@@ -71,7 +71,7 @@
     </div>
 
     <div class="footer-watermark flex-column">
-      <div>Find the code for this website on <a href="https://github.com/ludwigprager/www.celp.de">github</a></div>
+      <a href="https://github.com/ludwigprager/www.celp.de">Find the code for this website on github</a>
 <!--
         https://github.com/ludwigprager/www.celp.de
 -->
