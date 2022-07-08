@@ -217,8 +217,11 @@ and then again the 30-main/10-apply.sh.
 
 set -eu
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd $DIR
+BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $BASEDIR
+
+source ../set-env.sh
+source ./set-env.sh
 
 terraform init \
   -input=false \
