@@ -209,6 +209,7 @@ variable "cidr" {
 }
 ```
 
+<!--
 ## 30-main/90-destroy.sh 
 For completeness, this file will destroy the all resources. Try to run this script
 and then again the 30-main/10-apply.sh.
@@ -230,7 +231,6 @@ terraform init \
 terraform destroy -auto-approve
 ```
 
-<!--
 ## File Tree
 This is the file tree for the whole scenario.
 ```
