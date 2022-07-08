@@ -31,9 +31,9 @@ Also
 ## Description
 The setup consists of three steps:
 1. Authentication by running `gcloud auth login`
-2. Creation of the backend storage: [20-backend/apply.sh](https://github.com/ludwigprager/gcp-terraform-base/blob/main/20-backend/apply.sh)  
+2. Creation of the backend storage: [20-backend/apply.sh](https://github.com/ludwigprager/gcp-terraform-base/blob/main/20-tf-backend/10-create.sh)
   This step prepares the remote state. It creates a S3 bucket.
-3. Application of your IaC: [30-main/apply.sh](https://github.com/ludwigprager/gcp-terraform-base/blob/main/30-main/apply.sh)  
+3. Application of your IaC: [30-main/apply.sh](https://github.com/ludwigprager/gcp-terraform-base/blob/main/30-main/10-apply.sh)
 
 
 
@@ -123,14 +123,11 @@ But the `apply` will modify all resources according to the .tf files.
 #!/usr/bin/env bash
 
 set -eu
-set -o pipefail
+BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $BASEDIR
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd $DIR
-
-source ../20-tf-backend/set-env.sh
-
-export TF_VAR_region="eu-central-1"
+source ../set-env.sh
+source ./set-env.sh
 
 terraform init \
   -input=false \
@@ -147,7 +144,7 @@ These files contain the definition of resources that terraform is supposed to cr
 ```
 terraform {
   backend "gcs" {
-    prefix  = "gke-via-modules"
+    prefix  = "terraform-statefile-gcp"
   }
 }
 ```
