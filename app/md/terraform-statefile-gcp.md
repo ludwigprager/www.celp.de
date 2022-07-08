@@ -144,7 +144,8 @@ These files contain the definition of resources that terraform is supposed to cr
 ```
 terraform {
   backend "gcs" {
-    prefix  = "terraform-statefile-gcp"
+    # unique name to identify the file within the bucket
+    prefix  = "my-tf-prefix"
   }
 }
 ```
