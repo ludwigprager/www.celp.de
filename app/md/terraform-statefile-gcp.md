@@ -31,9 +31,9 @@ Also
 ## Description
 The setup consists of three steps:
 1. Authentication by running `gcloud auth login`
-2. Creation of the backend storage: [20-backend/apply.sh](https://github.com/ludwigprager/gcp-terraform-base/blob/main/20-tf-backend/10-create.sh)
+2. Creation of the backend storage: [20-backend/10-create.sh](https://github.com/ludwigprager/gcp-terraform-base/blob/main/20-tf-backend/10-create.sh)
   This step prepares the remote state. It creates a S3 bucket.
-3. Application of your IaC: [30-main/apply.sh](https://github.com/ludwigprager/gcp-terraform-base/blob/main/30-main/10-apply.sh)
+3. Application of your IaC: [30-main/10-apply.sh](https://github.com/ludwigprager/gcp-terraform-base/blob/main/30-main/10-apply.sh)
 
 
 
