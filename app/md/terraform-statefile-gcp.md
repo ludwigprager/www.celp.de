@@ -220,8 +220,6 @@ set -eu
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
-source ../20-tf-backend/set-env.sh
-
 terraform init \
   -input=false \
   -backend-config="bucket=${BUCKET_NAME}"
