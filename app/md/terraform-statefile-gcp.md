@@ -1,51 +1,65 @@
 
-# The Terraform Statefile in Public Clouds: GCP
+# The Terraform Statefile GCP
 
-This is the GCP part of 
-[this post](/terraform-statefile)  
+This is part 2 of 
+[this post](/terraform-statefile) and covers GCP.  
+You find the complete [code on github](https://github.com/ludwigprager/gcp-terraform-base).
 
-## File Tree
-This is the file tree for the whole scenario.
-```
-├── 10-deploy.sh
-├── 20-tf-backend
-│   ├── 10-create.sh
-│   └── set-env.sh
-├── 30-main
-│   ├── 10-apply.sh
-│   ├── 90-destroy.sh
-│   ├── backend.tf
-│   ├── network.tf
-│   ├── network-variables.tf
-│   ├── provider.tf
-├── 90-teardown.sh
-└── set-env.sh
-```
+
+## TL;DR
+1. Set your project id
+[`MY_project_id`](https://github.com/ludwigprager/gcp-terraform-base/blob/main/set-env.sh#L7)
+in
+[`set-env.sh`](https://github.com/ludwigprager/gcp-terraform-base/blob/main/set-env.sh)  
+and select an arbitrary prefix 
+[`MY_PREFIX`](https://github.com/ludwigprager/gcp-terraform-base/blob/main/set-env.sh#L15)
+in
+[`set-env.sh`](https://github.com/ludwigprager/gcp-terraform-base/blob/main/20-tf-backend/set-env.sh).
+The latter must be globally unique.
+2. Run
+        ./10-deploy.sh
+
+## Overview
+This is a compact project that lets you test an GCP setup with terraform.
+It essentially consists of a one-button process.
+Also
+- the terraform state will be stored in a S3 bucket.
+- all steps are idempotent
+- a script to clean up is provided
+- serves as an ideal starting point for a production project
+
+## Description
+The setup consists of three steps:
+1. Authentication by running `gcloud auth login`
+2. Creation of the backend storage: [20-backend/apply.sh](https://github.com/ludwigprager/gcp-terraform-base/blob/main/20-backend/apply.sh)  
+  This step prepares the remote state. It creates a S3 bucket.
+3. Application of your IaC: [30-main/apply.sh](https://github.com/ludwigprager/gcp-terraform-base/blob/main/30-main/apply.sh)  
+
+
+
 ## 10-deploy.sh
 Here is the deploy script I mentioned [in the beginning.](/terraform-statefile)
 and the entry point of this little project.
 
+<!--
 You pass it a key file to authenticate against GCP.
+-->
 
 This script can be called over and over, from different persons and
 in a CI/CD pipeline and will always create the VCP like it its defined in the git.  
 ```
 #!/usr/bin/env bash
-
 set -eu
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd $DIR
-
-local KEY_FILE=$(realpath $1)
-gcloud auth activate-service-account --key-file=${KEY_FILE}
-export GOOGLE_APPLICATION_CREDENTIALS=${KEY_FILE}
+BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $BASEDIR
 
 ./20-tf-backend/10-create.sh
-./30-main/10-apply.sh $*
+./30-main/10-apply.sh
 ```
 
 
 
+<!--
 ## 20-tf-backend/set-env.sh 
 Next, a file that holds settings and variables.  
 `BUCKET_NAME` needs to be worldwide unique. Hence, choose `MY_PREFIX`
@@ -62,6 +76,7 @@ export TF_VAR_project_id="celp-test-335521"
 export TF_VAR_network_name="celp-network-01"
 export TF_VAR_subnetwork_name="celp-subnetwork"
 ```
+-->
 
 ## 20-tf-backend/10-create.sh 
 This script creates the container for the statefile if it doesn't already exist.
@@ -100,9 +115,10 @@ fi
 ```
 
 ## 30-main/10-apply.sh:
-This is the core script of this Part 2.
+This is the core script of this Part.
 It assumes everything is ready to initialise and run terraform.
 The `terraform init` is idempotent and won't do much a second time.
+But the `apply` will modify all resources according to the .tf files.
 ```
 #!/usr/bin/env bash
 
@@ -193,7 +209,7 @@ variable "cidr" {
 ```
 
 ## 30-main/90-destroy.sh 
-For completeness, I provide this file will destroy the vpc. Try to run this script
+For completeness, this file will destroy the all resources. Try to run this script
 and then again the 30-main/10-apply.sh.
 ```
 #!/usr/bin/env bash
@@ -211,5 +227,25 @@ terraform init \
 
 terraform destroy -auto-approve
 ```
+
+<!--
+## File Tree
+This is the file tree for the whole scenario.
+```
+├── 10-deploy.sh
+├── 20-tf-backend
+│   ├── 10-create.sh
+│   └── set-env.sh
+├── 30-main
+│   ├── 10-apply.sh
+│   ├── 90-destroy.sh
+│   ├── backend.tf
+│   ├── network.tf
+│   ├── network-variables.tf
+│   ├── provider.tf
+├── 90-teardown.sh
+└── set-env.sh
+```
+-->
 
 
