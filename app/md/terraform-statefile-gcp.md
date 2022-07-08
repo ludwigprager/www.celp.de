@@ -38,15 +38,18 @@ The setup consists of three steps:
 
 
 ## 10-deploy.sh
-Here is the deploy script I mentioned [in the beginning.](/terraform-statefile)
-and the entry point of this little project.
+Here is
+<!-- the deploy script I mentioned [in the beginning](/terraform-statefile)
+and
+-->
+the entry point of this little project.
 
 <!--
 You pass it a key file to authenticate against GCP.
 -->
 
 This script can be called over and over, from different persons and
-in a CI/CD pipeline and will always create the VCP like it its defined in the git.  
+in a CI/CD pipeline and will always create the VPC like it its defined in the git.  
 ```
 #!/usr/bin/env bash
 set -eu
