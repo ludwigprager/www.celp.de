@@ -6,7 +6,6 @@ It took me some time to find these settings since
 the howto page https://www.ionos.de/digitalguide/server/knowhow/datenmigration-mit-rclone/ didn't
 not help much.
 
-So here is the rclone.conf file that works for me:
 ```
 [ionos]
 type = s3
@@ -18,10 +17,11 @@ endpoint = https://s3-de-central.profitbricks.com:443
 acl = private
 ```
 
-(Obviously, you need to add you credentials)  
+Obviously, you need replace the asterisks by your credentials.  
 
-I the following script to
-backup the bucket to a directory `cya-fileshare`.
+As an example where the config is used
+see the following script to
+backup the bucket the whole bucket to a directory `g1-fileshare`.
 ```
 #!/bin/bash
 
@@ -30,8 +30,7 @@ set -eu
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 pushd $DIR
 
-
 rclone \
   --config $(realpath rclone.conf ) \
-  sync ionos:cya-fileshare/ cya-fileshare/
+  sync ionos:g1-fileshare/ g1-fileshare/
 ```
