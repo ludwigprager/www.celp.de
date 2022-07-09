@@ -17,7 +17,7 @@ endpoint = https://s3-de-central.profitbricks.com:443
 acl = private
 ```
 
-Obviously, you need replace the asterisks by your credentials.  
+Replace the asterisks with your credentials.  
 
 Real example use case:  
 In the following script
