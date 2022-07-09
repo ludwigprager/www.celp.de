@@ -19,9 +19,9 @@ acl = private
 
 Obviously, you need replace the asterisks by your credentials.  
 
-As an example where the config is used
-see the following script to
-backup the bucket the whole bucket to a directory `g1-fileshare`.
+Real example use case:  
+In the following script
+the whole bucket `g1-fileshare` is synced to the local directory `g1-fileshare`.
 ```
 #!/bin/bash
 
