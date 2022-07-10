@@ -8,16 +8,13 @@ You find the complete [code on github](https://github.com/ludwigprager/gcp-terra
 
 ## TL;DR
 1. Set your project id
-[`MY_project_id`](https://github.com/ludwigprager/gcp-terraform-base/blob/main/set-env.sh#L7)
+[`CLOUDSDK_CORE_PROJECT`](https://github.com/ludwigprager/gcp-terraform-base/blob/main/set-env.sh#L6)
+and a globally unique
+[`BUCKET_NAME`](https://github.com/ludwigprager/gcp-terraform-base/blob/main/set-env.sh#L11)
 in
-[`set-env.sh`](https://github.com/ludwigprager/gcp-terraform-base/blob/main/set-env.sh)  
-and select an arbitrary prefix 
-[`MY_PREFIX`](https://github.com/ludwigprager/gcp-terraform-base/blob/main/set-env.sh#L15)
-in
-[`set-env.sh`](https://github.com/ludwigprager/gcp-terraform-base/blob/main/20-tf-backend/set-env.sh).
-The latter must be globally unique.
+[`set-env.sh`](https://github.com/ludwigprager/gcp-terraform-base/blob/main/set-env.sh).
 2. Run
-        ./10-deploy.sh
+       ./10-deploy.sh
 
 ## Overview
 This is a compact project that lets you test an GCP setup with terraform.
@@ -89,11 +86,9 @@ This script creates the container for the statefile if it doesn't already exist.
 set -eu
 set -o pipefail
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd $DIR
-source ./set-env.sh
-
-export CLOUDSDK_CORE_PROJECT=${TF_VAR_project_id}
+BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $BASEDIR
+source ../set-env.sh
 
 function bucket-exists() {
   local bucket_name=$1
@@ -107,7 +102,6 @@ function bucket-exists() {
     return 1
   fi
 }
-
 
 if bucket-exists "${BUCKET_NAME}"  ; then 
   echo bucket ${BUCKET_NAME} already exists

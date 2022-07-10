@@ -11,3 +11,7 @@ https://vuetifyjs.com/en/features/icon-fonts/#installing-fonts
 https://blog.logrocket.com/best-practices-for-loading-fonts-in-vue/
 
 https://google-webfonts-helper.herokuapp.com/fonts/vt323?subsets=latin
+
+./develop.sh  /bin/bash md2html.sh
+
+
